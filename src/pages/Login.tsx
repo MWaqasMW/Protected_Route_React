@@ -12,7 +12,8 @@ const Login = () => {
       const user = { email: "patient@example.com", role: "patient" }; // Corrected role to "patient"
       localStorage.setItem("user", JSON.stringify(user));
       setTimeout(() => {
-        navigate(Path.PAITIANTMAIN);
+        navigate(Path.PAITIANTMAIN, { replace: true });
+        window.location.reload();
       }, 1500);
     } else if (email === "provider@example.com" && password === "1234") {
       const user = { email: "provider@example.com", role: "provider" };
